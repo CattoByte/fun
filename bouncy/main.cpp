@@ -23,21 +23,21 @@ struct ball {
 void drawScreen(ball* objects)
 {
 	//Initialization
-	char screen[XRES][YRES];
+	char screen[YRES][XRES];
 	REPEAT_TIMES(YRES, i)
 		REPEAT_TIMES(XRES, j)
-			screen[j][i] = '.';
+			screen[i][j] = '.';
 	
 	//Balls
 	REPEAT_TIMES(BALL_AMOUNT, i) {
-		size_t xAccess = floor(objects[i].xPosition);
-		size_t yAccess = floor(objects[i].yPosition);
-		screen[xAccess][yAccess] = '#';
+		size_t xAccess = objects[i].xPosition;
+		size_t yAccess = objects[i].yPosition;
+		screen[yAccess][xAccess] = '#';
 	}
 
 	REPEAT_TIMES(YRES, i) {
 		REPEAT_TIMES(XRES, j)
-			cout << screen[j][i];
+			cout << screen[i][j];
 		cout << endl;
 	}
 	cout << endl << endl << flush;
@@ -53,10 +53,10 @@ void doPhysics(ball *objects, int xgravity, int ygravity)
 		objects[i].yPosition += objects[i].ySpeed;
 		
 		if (objects[i].xPosition < 0)		{objects[i].xPosition = 0;	objects[i].xSpeed *= -BOUNCE_SPEED_KEEP;}
-		if (objects[i].xPosition > XRES)	{objects[i].xPosition = XRES-1;	objects[i].xSpeed *= -BOUNCE_SPEED_KEEP;}
+		if (objects[i].xPosition >= XRES)	{objects[i].xPosition = XRES-1;	objects[i].xSpeed *= -BOUNCE_SPEED_KEEP;}
 
 		if (objects[i].yPosition < 0)		{objects[i].yPosition = 0;	objects[i].ySpeed *= -BOUNCE_SPEED_KEEP;}
-		if (objects[i].yPosition > YRES)	{objects[i].yPosition = YRES-1;	objects[i].ySpeed *= -BOUNCE_SPEED_KEEP;}
+		if (objects[i].yPosition >= YRES)	{objects[i].yPosition = YRES-1;	objects[i].ySpeed *= -BOUNCE_SPEED_KEEP;}
 
 	}
 }
