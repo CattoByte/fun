@@ -1,6 +1,6 @@
 #define REPEAT_TIMES(times,symbol) for (size_t symbol = 0; symbol < times; symbol++)
 
-#define BALL_AMOUNT 5
+#define BALL_AMOUNT 15
 #define XRES 100
 #define YRES 50
 #define BOUNCE_SPEED_KEEP 0.75
