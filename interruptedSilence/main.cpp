@@ -1,8 +1,8 @@
 #define REPEAT_TIMES(times,symbol) for (size_t symbol = 0; symbol < times; symbol++)
 
 #define PATH_TO_SFX "SFX"
-#define MIN_TIME 7000
-#define MAX_TIME 60000
+#define MIN_TIME 300
+#define MAX_TIME 10000
 
 #include <filesystem>
 #include <algorithm>
@@ -31,12 +31,12 @@ void audioLoop(filesystem::directory_entry entry)
 {
 	while (true) {
 		size_t random = getRandom();
-		cout << entry.path().native() << "\t Next in " << random << "ms" << endl << flush;
+		cout << entry.path().native() << "\t Next in " << random << "ms" << endl;
+		this_thread::sleep_for(chrono::milliseconds(random));
 		string command = "aplay -q ";
 		command.append(entry.path().native());
 		command.append(" &");	//End result should be "aplay -q (path) &"
 		system(command.c_str());
-		this_thread::sleep_for(chrono::milliseconds(random));
 	}
 }
 		
@@ -51,6 +51,7 @@ int main()
 	REPEAT_TIMES(entries.size(), i) {
 		audioThreads[i] = thread(audioLoop, entries[i]);
 		audioThreads[i].detach();
+		this_thread::sleep_for(100ms);		//Do this so the thread couts dont interefere
 	}
 	while (true) {}
 	return 0;
