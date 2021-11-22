@@ -1,8 +1,8 @@
 #define REPEAT_TIMES(times,symbol) for (size_t symbol = 0; symbol < times; symbol++)
 
 #define PATH_TO_SFX "SFX"
-#define MIN_TIME 300
-#define MAX_TIME 10000
+#define MIN_TIME 1000
+#define MAX_TIME 60000
 
 #include <filesystem>
 #include <algorithm>
@@ -46,13 +46,15 @@ int main()
 	vector<thread>				audioThreads;
 	vector<filesystem::directory_entry>	entries;
 
-	for (filesystem::directory_entry entry : filesystem::directory_iterator(PATH_TO_SFX)) entries.push_back(entry);
+	for (filesystem::directory_entry entry : filesystem::recursive_directory_iterator(PATH_TO_SFX)) if (!entry.is_directory()) entries.push_back(entry);
 	audioThreads.resize(entries.size());
+	cout << "Starting SFX threads..." << endl;
 	REPEAT_TIMES(entries.size(), i) {
 		audioThreads[i] = thread(audioLoop, entries[i]);
 		audioThreads[i].detach();
 		this_thread::sleep_for(100ms);		//Do this so the thread couts dont interefere
 	}
+	cout << endl << "Finished loading SFX threads!" << endl << "Halting main thread, exit with Ctrl+C" << endl << endl;
 	while (true) {}
 	return 0;
 }

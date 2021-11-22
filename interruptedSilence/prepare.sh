@@ -1,4 +1,4 @@
-for i in SFX/*.mp3
+for i in SFX/*/*.mp3
 do
 	newName=${i%.*}.wav
 
@@ -9,7 +9,7 @@ do
 	echo -e "Removed: '$i'"
 done
 
-for i in SFX/*.wav
+for i in SFX/*/*.wav
 do
 	for j in {1..5}
 	do
@@ -18,7 +18,7 @@ do
 	done
 done
 
-for i in SFX/*.wav
+for i in SFX/*/*.wav
 do
 	tempName=${i%.*}.tmp.wav
 
