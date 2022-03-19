@@ -1,12 +1,14 @@
 # fun
 ##  A collection of trash!
-Here lies a bunch of small c++ programs that I created either on my spare time, or when I wanted to code but was exhausted from other projects.
+Here lies a bunch of small C, C++, Bash, and whatever else programs that I created either on my spare time, or when I wanted to code but was exhausted from other projects.
+Anyone can submit their trashes by making a pull request, but remember, the programs are called "trashes" for a reason, it has to be something that just exists for fun.
+I'll take care of updating the README file, though.
 ## List of "trashes":
 
-| Name | Description | Date  | Dependencies | Notes |
-| - | - | - | - | - | - |
-| Bouncy | Balls bouncing, with gravity | 2021年 11月 17日 | None |
-| Interrupted Silence | Random sounds playing at random intervals | 2021年 11月 20日 | aplay (optional: normalize-audio) | Comes with a bash script to convert mp3 files to wav and normalize audio. |
+| Name			| Description					| Date			| Dependencies				| Notes										| Author	| Target OS	|
+| -			| -						| -			| - 					| -										| -		| -		|
+| Bouncy		| Balls bouncing, with gravity			| 2021年 11月 17日	| None					|										| キャトバイト	| Linux		|
+| Interrupted Silence	| Random sounds playing at random intervals	| 2021年 11月 20日	| aplay (optional: normalize-audio)	| Comes with a bash script to convert mp3 files to wav and normalize audio.	| キャトバイト	| Linux		|
 
 ### Bugs:
 #### Bouncy:
