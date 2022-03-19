@@ -1,0 +1,8 @@
+Put all your backgrounds in the "backgrounds" folder
+Put all your intermission "frames" in the "backgrounds/intermission" folder.
+Don't have any spaces in the names, as it will most likely mess the program up.
+Start the program, it will cry if you don't give it the arguments it wants, so do that.
+
+Arguments:
+	1.	Time a background is dipslayed
+	2.	Time the intermission takes

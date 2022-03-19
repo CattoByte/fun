@@ -1,0 +1,37 @@
+Guidelines for the Chen pictures:
+Avoid the whole frame, especially if there are (for example) two characters at the edges, as that can not be fitted into 16:9 without one of the characters being abruptly cut.
+Don't avoid the whole frame if some context is necessary (refer to honk honk panel 3)
+Steps:
+	To keep the images crisp, apply a selective gaussian blur ~3 times with these settings:
+		Blur radius	50
+		Max. delta	0.05
+	Manually remove all other things that will not end up in the final picture, as to make the process below work better.
+	Use indexed color to limit the colors to 5 (the colors of things like the eyes will change, but that's part of the style I'm going for).
+	Fix mistakes in the indexing process manually, will take a long time.
+	If the pannel has a character being cut at the left, place the image on the left, if it is on the right, place the image on the right.
+	If it is both, find an alternative (refer to #1's example).
+	If it is none, do whatever you want.
+
+Things I either did or couldn't do (X, done | O, couldn't | /, on it):
+	Description		Panel		Did?		Name		Changelog
+	PHANTOM Cover		Ｎ／Ａ		/		走る
+	Honk honk		1		O		Ｎ／Ａ
+	Honk honk		2		X		キコキコ
+	Honk honk		3		X		酔う		2*Fixed Suika Ibuki's hair
+	Honk honk		4		X		パスパス
+	
+
+Link to latest 4kouma with a pannel completed (1/4 -> 4/4):
+	https://danbooru.donmai.us/posts/244234?q=pool%3A738
+
+List of 4koumas (in danbooru pool) and if they had Chen or not:
+	1.	Chen on page (PHANTOM cover)
+	2.	Chen on all 4 pannels
+	3.	No Chen
+	4.	Chen on all 4 pannels
+	5.	No Chen
+	6.	Chen on pannels 2 and 4
+	7.	No Chen
+	8.	Chen on pannels 2, 3 and 4
+	9.	No Chen
+	10.	Chen on all pannels (pannel 4 has her holding something)
