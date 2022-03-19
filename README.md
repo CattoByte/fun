@@ -16,3 +16,5 @@ I'll take care of updating the README file, though.
  - ~~Can crash due to memory errors~~ Fixed (Didn't check bounds correctly)
 #### Interrupted Silence:
  - N/A
+#### Changing Background
+ - Will probably crash your computer if you give the script no arguments due to constant change of the background.
